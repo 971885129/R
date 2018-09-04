@@ -22,8 +22,12 @@ cor 求列之间的相关性
 
     Error in install.packages : type == "both" cannot be used with 'repos = NULL'
 原因：压缩包为.rar格式
-解决：压缩应方式为tar 或 zip 
+解决：压缩格式应为tar.gz 或者zip
 
     file ‘R/pheatmap.r’ has the wrong MD5 checksum
 原因：修改了源码，MD5发生改变  
-解决：删掉MD5文件
+解决：不影响，类似warning
+
+	'C:/install/R-3.4.1/library/pheatmap/DESCRIPTION': No such file or directory
+原因：压缩文件命名问题
+解决：更改压缩文件名为下载原始压缩文件名称
