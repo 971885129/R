@@ -48,3 +48,18 @@ pheatmap(out_file='文件名')，即可生成聚类后的结果
 
 ### 方法2
 详见makecdfenv包使用说明
+
+## R报错 maximal number of DLLs reached
+* 环境变量增加
+
+		export R_MAX_NUM_DLLS=300:$R_MAX_NUM_DLLS
+		数值超过500会报错
+		R_MAX_NUM_DLLS bigger than 614 may exhaust open files limit
+		R3.5可能已修复该问题
+		
+
+
+
+
+
+
