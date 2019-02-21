@@ -57,7 +57,13 @@ pheatmap(out_file='文件名')，即可生成聚类后的结果
 		R_MAX_NUM_DLLS bigger than 614 may exhaust open files limit
 		R3.5可能已修复该问题
 		
+## 3.t.test
+* 计算两组差异时，若两组数据完全一样，曾报错
+## 4.apply内函数导入多参数
 
+	fxn <- function(var1,var2){
+		}
+	apply(dataframe,1,fxn,var2=2)
 
 
 
