@@ -73,7 +73,28 @@ pheatmap(out_file='文件名')，即可生成聚类后的结果
 
 		eset <- annotateEset(DATA.rma,hgu133plus2.db)
 		annotation <- pData(featureData(eset))
-* oligo包
+* oligo包质控步骤
+
+		待完善
+* olig包标准化
+
+		背景校正
+		oligo::backgroundCorrectionMethods()#展示有哪些校正方法
+		[1] "rma"  "mas"  "LESN"
+		bgdata <- backgroundCorrect(DATA,method = 'mas')
+		组间标准化
+		normalizationMethods()#展示有哪些标准化方法
+		[1] "quantile"           "quantile.robust"    "quantile.in.blocks" "qspline"            "loess"              "invariantset"      
+		[7] "constant"  
+		normData <- normalize(bgdata)#默认为quantile normalization
+		未知
+		summarizationMethods()
+		summarize()
+oligo::rma(),背景校正方法为rma,组间标准化方法为quantile normalization，同时可将读取数据得到的GeneFeatureSet数据格式转化为ExpressionSet，从而可提取表达量
+<br>若想选择其他标准化方法，可通过上面的拆分步骤进行，但GeneFeatureSet格式无法summarize,需再进一步确认？
+<br>可通过用oligo::rma(normData,normalize=F,background=F)方法转换为ExpressionSet，但经测试affy芯片用mas方法会报错，故需确认？
+<br>ExpressionFeatureSet格式的数据可以通过backgroundCorrect + normalize + summarize进行处理，但不清楚如何获取该数据格式？
+<br>注意： mas LESN可能只能适用于双通道芯片？affy为单通道芯片？故只能用rma？可用Affy包验证
 
 
 
