@@ -65,6 +65,20 @@ pheatmap(out_file='文件名')，即可生成聚类后的结果
 		}
 	apply(dataframe,1,fxn,var2=2)
 
+## 5.Affy芯片数据处理
+* annotate包可识别芯片所需注释包
+
+		annPkgName(DATA@annotation,type="db")
+* affycoretools包可利用annotate识别出的注释包对芯片进行注释（需确定注释包名称是否有差别）
+
+		eset <- annotateEset(DATA.rma,hgu133plus2.db)
+		annotation <- pData(featureData(eset))
+* oligo包
+
+
+
+
+
 
 
 
