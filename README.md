@@ -91,9 +91,12 @@ pheatmap(out_file='文件名')，即可生成聚类后的结果
 		summarizationMethods()
 		summarize()
 oligo::rma(),背景校正方法为rma,组间标准化方法为quantile normalization，同时可将读取数据得到的GeneFeatureSet数据格式转化为ExpressionSet，从而可提取表达量
-<br>若想选择其他标准化方法，可通过上面的拆分步骤进行，但GeneFeatureSet格式无法summarize,需再进一步确认？
+<br>若想选择其他标准化方法，可通过上面的拆分步骤进行，但GeneFeatureSet格式和ExpressionFeatureSet格式无法summarize，故目前无法分步骤进行标准化
 <br>可通过用oligo::rma(normData,normalize=F,background=F)方法转换为ExpressionSet，但经测试affy芯片用mas方法会报错，故需确认？
 <br>ExpressionFeatureSet格式的数据可以通过backgroundCorrect + normalize + summarize进行处理，但不清楚如何获取该数据格式？
+
+	发现在部分芯片中，读取原始数据是ExpressionFeatureSet格式，还有有的芯片是GeneFeatureSet格式，而且这两种芯片数据可能来自同一种平台
+	关于GeneFeatureSet格式，chrome收藏书签“the oligo package”有介绍
 <br>注意： mas LESN可能只能适用于双通道芯片？affy为单通道芯片？故只能用rma？可用Affy包验证
 
 
