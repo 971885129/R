@@ -99,6 +99,12 @@ oligo::rma(),背景校正方法为rma,组间标准化方法为quantile normaliza
 	关于GeneFeatureSet格式，chrome收藏书签“the oligo package”有介绍
 <br>注意： mas LESN可能只能适用于双通道芯片？affy为单通道芯片？故只能用rma？可用Affy包验证
 
+## apply传递多参数
+
+	apply(exp,1,FC,s1=sam1,s2=sam2)
+
+
+
 
 
 
