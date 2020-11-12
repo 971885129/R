@@ -2,9 +2,9 @@
 
 # 加载包报错
 
-  Loading required package: oligoClasses
-  Error: package or namespace load failed for ‘oligoClasses’:
-   objects ‘open.ff’, ‘close.ff’ are not exported by 'namespace:ff'
-  Error: package ‘oligoClasses’ could not be loaded
+    Loading required package: oligoClasses
+    Error: package or namespace load failed for ‘oligoClasses’:
+     objects ‘open.ff’, ‘close.ff’ are not exported by 'namespace:ff'
+    Error: package ‘oligoClasses’ could not be loaded
 
 
